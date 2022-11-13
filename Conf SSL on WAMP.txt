@@ -1,0 +1,24 @@
+DATE: 13-11-2022
+
+#In httpd.conf,
+Include conf/extra/httpd-ssl2.conf 
+LoadModulessl_module modules/mod_ssl.so
+LoadModulesocache_shmcb_module modules/mod_socache_shmcb.so
+
+
+#In PHP.ini,
+extension=php_openssl.dll
+
+
+#Create a file ssl2.conf in Apache24\conf\extra,
+Listen 443
+<VirtualHost *:443>
+    ServerName activate.adobe.com
+    SSLEngine on
+    SSLCertificateFile "F:/www/Engine/Apache24/cert/activate.adobe.com.crt"
+    SSLCertificateKeyFile "F:/www/Engine/Apache24/cert/activate.adobe.com.key"
+</VirtualHost>
+
+
+#In windows hostfile,
+127.0.0.1				activate.adobe.com
