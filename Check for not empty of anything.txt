@@ -1,0 +1,9 @@
+#Here checking for any files that has been received via POST request without file name,
+
+<?php
+if(!empty($_FILES)){
+   echo 'File uploaded';
+} else{
+	echo 'File not uploaded';
+}
+?>

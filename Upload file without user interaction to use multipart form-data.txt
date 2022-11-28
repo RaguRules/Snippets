@@ -1,0 +1,9 @@
+DATE: 28-11-2022
+
+#html,
+<form action="http://localhost/multipart.php" enctype="multipart/form-data" method="POST">
+		Name:<br>
+			<input type="text" name="name"><br>
+			<input hidden name="filename" type="file" value="file:///README.md">
+			<input type="submit" value="upload">
+	</form>
