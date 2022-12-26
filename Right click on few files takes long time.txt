@@ -1,0 +1,58 @@
+--------Global Windows Repair System---------
+Dism /Online /Cleanup-Image /RestoreHealth
+sfc /scannow
+Restart
+
+
+--------If issue persists---------
+Update Display Drivers
+Remove Recent Third-party application
+Disable All Unnecessary Third-Party Shell Extensions by - ShellEx View : https://www.nirsoft.net/utils/shexview.html
+Fix Registry
+Execute a Clean Boot
+Never use Norton Power Eraser or not stop at middle of the scan
+
+
+---------- User Manual for ShellEx View --------------
+Run as Administrator
+Go to the menu and select Then choose the option Filter by Extension Type. From there, go to the Context menu option and click on it to open the next page.
+In the new window, a list of entries will be displayed. On this list, any entry marked with the pink background is an entry that has been installed with third-party software.
+Hold down the CTRL key on your keyboard and click on all the entries with the pink background. This will highlight each of them. Now go to the top left corner of the window and select the red button. This will disable all the selected entries.
+After this, restart your computer to effect the change. Check to see if the problem is gone.
+If this resolves the issue, it means a faulty shell extension is the cause of your problem. To identify the specific shell extension causing this problem, you should enable the extensions one after the other until the issue reoccurs again. If the problem reoccurs when you enable a particular extension, that is your culprit.
+All you have to do now is disable that specific extension. After that, locate the software associated with it and uninstall it as well.
+Restart your computer so that Windows can save your changes.
+
+
+------------------Fix Registry---------------
+If the above solution did not work, it could be that you have a corrupt registry and you need to fix this. Before proceeding to fix your registry, make a backup of your registry. This will come in handy if you encounter an error and need to restore your registry to its former state.
+
+After backing up your registry, you can now follow the steps below to perform a registry fix:
+
+    On your keyboard, press the shortcut Windows + R. Then input the command regedit and hit the ENTER key to execute it.
+    The next step is to navigate to this registry key:
+
+HKEY_CLASSES_ROOT\Directory\shellex\ContextMenuHandlers
+
+    When you are in this location, go to ContextMenuHandlers and select it. This will show you a list of folders under it.
+    Right-click on all the folders on this list (except for New and WorkFolders) and choose
+
+Note: If you do not want to delete all these folders completely, you can delete them one after the other until the problem is resolved. However, for each folder you delete, you have to reboot your PC. Therefore, it is best to delete them all at once.
+
+    Restart your device to confirm the changes you have made.
+
+
+-------------Execute a Clean Boot---------------
+A software conflict could be another reason why your right-click context menu is slow. To fix this, you need to perform a clean boot to see which app is the culprit:
+
+On your keyboard, press the shortcut Windows key + R. Into the box, input “msconfig” (without the quotation marks). Click on the OK button to confirm your input.
+In the new window, click on the General tab and check to confirm that the box next to Selective markup is
+Go to the box next to Load startup items and uncheck it.
+Click on the Services Under this tab, go to the box next to Hide all Microsoft services and check it.
+At this point, go to the Disable all button and click on it. This will disable every unnecessary service that may cause conflict.
+Go to the Startup tab and choose Open Task Manager.
+In this new window, go to the Startup tab and look for every startup item that is enabled. Disable all of them.
+Confirm your selection by clicking on the OK button and then rebooting your system.
+Now return to your keyboard and press the shortcut Windows + R. Input “msconfig” into the box and select OK.
+Click on the General tab again and choose the option Normal Startup. Click on the OK button to confirm your changes.
+When a prompt appears asking you to restart your device, click on the Restart button. If this prompt does not appear, reboot the computer yourself. Your right-click context menu should be back to normal after this.
